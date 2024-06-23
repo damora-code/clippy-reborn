@@ -5,8 +5,7 @@ import speak from './speechSynthesis';
 function ChatBox() {
   const [message, setMessage] = useState("");
   const [chats, setChats] = useState([]);
-  const [isLoading, setIsLoading] = useState(false); // New state for loading indicator
-  // Create a ref for the chat container
+  const [isLoading, setIsLoading] = useState(false); // state for loading indicator
   const chatContainerRef = useRef(null);
 
   const chat = async (e, message) => {
