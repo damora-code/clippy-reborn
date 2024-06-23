@@ -1,0 +1,33 @@
+# Node.js & NPM
+node_modules/
+npm-debug.log
+yarn-error.log
+package-lock.json
+yarn.lock
+
+# React build output
+/client/build/
+/client/node_modules/
+
+# Electron build output
+/out/
+
+# Environment variables
+.env
+
+# IDE files
+.vscode/
+.idea/
+
+# Logs
+*.log
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# macOS specific
+*.DS_Store
+
+# Windows specific
+Thumbs.db
