@@ -1,14 +1,87 @@
-body {
-    margin: 0;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-      'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-      sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-  }
-  
-  code {
-    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-      monospace;
-  }
-  
+/* ChatBox.css */
+
+main {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  background: transparent;
+}
+
+section {
+  flex-grow: 1;
+  overflow-y: auto;
+  padding: 10px;
+  background-color: transparent;
+}
+
+.message-container {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.user .message {
+  background-color: #dcf8c6; /* Light green */
+  border-radius: 20px 20px 20px 0;
+  align-self: flex-end;
+}
+
+.assistant .message {
+  background-color: #ffffff; /* White */
+  border-radius: 20px 20px 0 20px;
+  align-self: flex-start;
+  position: relative;
+}
+
+.assistant .message::before {
+  content: "";
+  position: absolute;
+  left: -10px;
+  top: 10px;
+  width: 15px;
+  height: 15px;
+  background-color: #ffffff;
+  border: 1px solid #ccc;
+  border-radius: 50%;
+}
+
+.assistant .message::after {
+  content: "";
+  position: absolute;
+  left: -5px;
+  top: 25px;
+  width: 10px;
+  height: 10px;
+  background-color: #ffffff;
+  border: 1px solid #ccc;
+  border-radius: 50%;
+}
+
+.loading-indicator {
+  text-align: center;
+  margin-top: 20px;
+  background-color: #f0f0f0; /* Light grey to mimic chat bubble color */
+  border-radius: 15px;
+  padding: 5px 10px;
+  max-width: 80%;
+  margin-left: 20%; /* Align it to where the assistant messages appear */
+}
+
+form {
+  display: flex;
+  margin-top: 20px;
+}
+
+input[type="text"] {
+  flex-grow: 1;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+input[type="text"]:focus {
+  outline: none;
+  border-color: #007bff; /* Blue */
+}

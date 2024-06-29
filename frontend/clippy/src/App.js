@@ -1,12 +1,11 @@
 import './App.css';
-import ChatBox from './components/ChatBox.js';
-import Clippy from './components/Clippy.js';
+
+import ChatLayout from './components/ChatLayout.js'
 
 function App() {
   return (
     <div className="App">
-      <ChatBox />
-      <Clippy />
+      <ChatLayout/>
     </div>
   );
 }
