@@ -27,7 +27,7 @@ const createWindow = () => {
   mainWindow.webContents.on('did-finish-load', () => {
     mainWindow.webContents.insertCSS('::-webkit-scrollbar { display: none; }');
   });
-  
+
 };
 
 app.on('ready', createWindow);
