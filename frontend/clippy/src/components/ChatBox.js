@@ -1,7 +1,7 @@
 // ChatBox.js
 import React, { useEffect, useRef, useState } from "react";
 import "./ChatBox.css";
-import speak from './speechSynthesis';
+//import speak from './speechSynthesis';
 
 function ChatBox() {
   const [message, setMessage] = useState("");
@@ -24,18 +24,24 @@ function ChatBox() {
       },
       body: JSON.stringify({ chats: msgs }),
     })
-    .then((response) => response.json())
-    .then((data) => {
-      console.log("Server Response:", data);
-      msgs.push({ role: "assistant", content: data.output.message.content });
-      setChats(msgs);
-      setIsLoading(false);
-      speak(data.output.message.content);
-    })
-    .catch((error) => {
-      console.error("Error during API request:", error);
-      setIsLoading(false);
-    });
+      .then((response) => response.json())
+      .then((data) => {
+        console.log("Server Response:", data);
+        msgs.push({ role: "assistant", content: data.output.message.content });
+        setChats(msgs);
+        setIsLoading(false);
+        //speak(data.output.message.content); // speech synthesis.js 
+        // fetch('http://localhost:8000/speech', {
+        //   method: 'POST',
+        //   headers: { 'Content-Type': 'application/json' },
+        //   body: JSON.stringify({ text: data.output.message.content })
+      // });
+      })
+      .catch((error) => {
+        console.error("Error during API request:", error);
+        setIsLoading(false);
+      });
+
 
     if (chatContainerRef.current) {
       chatContainerRef.current.scrollTop = chatContainerRef.current.scrollHeight;
@@ -75,8 +81,16 @@ function ChatBox() {
           onChange={(e) => setMessage(e.target.value)}
         />
       </form>
+      <button onClick={() => playAudioFromUrl(audioUrl)}>Play Audio</button>
+
     </main>
   );
 }
+const audioUrl = "/speech.mp3";
+const playAudioFromUrl = (url) => {
+  console.log("Playing audio from URL:", url);
+  const audio = new Audio(url);
+  audio.play().catch(error => console.error("Error playing audio:", error));
+};
 
 export default ChatBox;
