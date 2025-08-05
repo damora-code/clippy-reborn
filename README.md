@@ -23,6 +23,7 @@ Clippy Reborn is a fun and interactive project that reimagines Clippy, the anima
 - **Nostalgic UI** - Brings back the original feel of the Microsoft Office assistant.
 - **Configurable Actions** - Customize Clippy’s responses and interactions.
 - **Cross-Platform Support** - Works on modern web browsers with a responsive design.
+- **Artifical Intelligence** - Integrated OpenAI's model to enhance Clippy.
 
 ## Installation
 
