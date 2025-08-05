@@ -15,7 +15,7 @@ Clippy Reborn brings back the nostalgic, helpful office assistant in a modernize
 
 ## Overview
 
-Clippy Reborn is a fun and interactive project that reimagines Clippy, the animated paperclip assistant. This project is designed to add a personalized helper to your application, providing tips, information, and a little personality to user interactions.
+Clippy Reborn is a fun and interactive project that reimagines Clippy, the animated paperclip assistant with AI brains! This project is designed to add a personalized helper to your application, providing tips, information, and a little personality to user interactions.
 
 ## Features
 
